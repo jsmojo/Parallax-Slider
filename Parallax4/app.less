@@ -1,0 +1,105 @@
+﻿body,
+html {
+    height: 100%;
+    margin: 0 auto;
+    width: 800px;
+    color: #777;
+}
+
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+    position: relative;
+    opacity: 0.75;
+    /*background-attachment: fixed;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgimg-1 {
+    background-image: url("http://fakeimg.pl/350x500/");
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 500px;
+    border: 1px solid gray;
+    overflow: hidden;
+}
+
+.Slider-Template(@top: 0px, @left: 0px) {
+    margin-top: @top;
+    margin-left: @left;
+}
+
+.Slider-Transition-X(@positionTransition: margin-top 2s) {
+    -moz-transition: @positionTransition;
+    -o-transition: @positionTransition;
+    -webkit-transition: @positionTransition;
+    transition: @positionTransition;
+}
+
+.Slider-Transition-XY(@positionTransition-x: margin-top 2s, @positionTransition-y: margin-left 2s) {
+    -moz-transition: @positionTransition-x, @positionTransition-y;
+    -o-transition: @positionTransition-x, @positionTransition-y;
+    -webkit-transition: @positionTransition-x, @positionTransition-y;
+    transition: @positionTransition-x, @positionTransition-y;
+}
+
+.demoOne {
+    .Slider-Template(-270px, 50px);
+    .Slider-Transition-X();
+}
+
+.demoOne.active {
+    .Slider-Template(50px, 50px);
+    .Slider-Transition-X();
+}
+
+.demoTwo { 
+    .Slider-Template(-270px, -270px);
+    .Slider-Transition-XY();
+}
+
+.demoTwo.active {
+    .Slider-Template(50px, 50px);
+    .Slider-Transition-XY();
+}
+
+.demoThree {
+    .Slider-Template(130px, 600px);
+    .Slider-Transition-XY();
+}
+
+.demoThree.active {
+    .Slider-Template(130px, 270px);
+    .Slider-Transition-XY();
+}
+
+.demoFour {
+    .Slider-Template(-270px, 170px);
+    .Slider-Transition-X();
+}
+
+.demoFour.active {
+    transition: margin-top 2s;
+    .Slider-Template(50px, 170px);
+    .Slider-Transition-X();
+}
+
+.caption {
+    width: 175px;
+    height: 175px;
+    border: 8px solid gray;
+    border-radius: 250px;
+    text-align: center;
+    color: #000;
+}
+
+.caption .border {
+    display: inline-block;
+    padding-top: 110px;
+}
+
+.item-container {
+    margin: 10px 0;
+}
